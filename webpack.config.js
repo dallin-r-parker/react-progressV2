@@ -2,13 +2,16 @@ const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const VENDOR_LIBS = ['react', 'react-dom', 'react-router']
+
 module.exports = {
 	entry: {
-		bundle: './src/index.js'
+		bundle: './src/index.js',
+		vendor: VENDOR_LIBS
 	},
 	output: {
 		path: path.join(__dirname, 'bundle'),
-		filename: '[name].js'
+		filename: '[name].[chunkhash].js'
 	},
 	module: {
 		rules: [
@@ -28,6 +31,9 @@ module.exports = {
 		]
 	},
 	plugins: [
+		new webpack.optimize.CommonsChunkPlugin({
+			names: ['vendor', 'manifest']
+		}),
 		new HtmlWebpackPlugin({
 			template: 'src/index.html'
 		})

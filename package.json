@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "clean": "rimraf bundle",
+    "build": "webpack -p"
   },
   "author": "Dallin Parker",
   "license": "MIT",
