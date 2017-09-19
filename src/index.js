@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './base.scss'
 
 const App = () => {
-	return <div>My App is working</div>
+	return <div>My  is working real time!!</div>
 }
 
 ReactDOM.render(<App/>, document.getElementById('root'))
