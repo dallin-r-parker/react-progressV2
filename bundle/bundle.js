@@ -22419,8 +22419,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/lib/loader.js!./base.scss", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/lib/loader.js!./base.scss");
+		module.hot.accept("!!../node_modules/css-loader/index.js??ref--1-1!../node_modules/sass-loader/lib/loader.js??ref--1-2!./base.scss", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js??ref--1-1!../node_modules/sass-loader/lib/loader.js??ref--1-2!./base.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -22433,12 +22433,12 @@ if(false) {
 /* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(186)(undefined);
+exports = module.exports = __webpack_require__(186)(true);
 // imports
 
 
 // module
-exports.push([module.i, "body {\n  background: green; }\n", ""]);
+exports.push([module.i, "body, html {\n  font-family: \"Courier New\", sans-serif;\n  background: green; }\n", "", {"version":3,"sources":["/Users/dallinparker/code/gitPublic/react-progressV2/src/src/base.scss"],"names":[],"mappings":"AAEA;EACC,uCAAqC;EACrC,kBAJY,EAKZ","file":"base.scss","sourcesContent":["$color: green;\n\nbody, html{\n\tfont-family:\"Courier New\", sans-serif;\n\tbackground: $color;\n}"],"sourceRoot":""}]);
 
 // exports
 
