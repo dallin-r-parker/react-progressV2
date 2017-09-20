@@ -1,24 +1,19 @@
 import React, {Component} from 'react'
+import * as actions from '../../actions/auth'
+import {connect} from 'react-redux'
 
 class Login extends Component{
 	constructor(props){
 		super(props)
-		this.state = {
-			email: '',
-			password: ''
-		}
 
 		this.handleEmailInput = this.handleEmailInput.bind(this)
 		this.handlePwInput = this.handlePwInput.bind(this)
 		this.handleLogin = this.handleLogin.bind(this)
 	}
 
-	handleEmailInput(email){
-		console.log('email: ', email.target.value)
-	}
-	handlePwInput(pw){
-		console.log('pw: ', pw.target.value)
-	}
+	handleEmailInput = email => (this.props.emailInput(email.target.value))
+	handlePwInput = pw => (this.props.passwordInput(pw.target.value))
+
 
 	handleLogin(e){
 		e.preventDefault()
@@ -39,4 +34,8 @@ class Login extends Component{
 	}
 }
 
-export default Login
+const mapStateToProps = reducer => {
+	console.log('Login: ', reducer)
+}
+
+export default connect(mapStateToProps, actions)(Login)
