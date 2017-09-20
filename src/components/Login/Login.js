@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 class Login extends Component{
 	constructor(props){
 		super(props)
-
+		
 		this.handleEmailInput = this.handleEmailInput.bind(this)
 		this.handlePwInput = this.handlePwInput.bind(this)
 		this.handleLogin = this.handleLogin.bind(this)
@@ -13,10 +13,11 @@ class Login extends Component{
 
 	handleEmailInput = email => (this.props.emailInput(email.target.value))
 	handlePwInput = pw => (this.props.passwordInput(pw.target.value))
-
-
+	
 	handleLogin(e){
 		e.preventDefault()
+
+		this.props.loginUser(true)
 	}
 	render(){
 		return(
@@ -24,7 +25,7 @@ class Login extends Component{
 				<form className="col s10" onSubmit={this.handleLogin}>
 					<h5>Progress Login</h5>
 					<input placeholder='email' onChange={this.handleEmailInput}/>
-					<input placeholder='password' onChange={this.handlePwInput}/>
+					<input type='password' placeholder='password' onChange={this.handlePwInput}/>
 					<button
 						className='btn'
 						onClick={this.handleLogin}>Login</button>
@@ -34,8 +35,10 @@ class Login extends Component{
 	}
 }
 
-const mapStateToProps = reducer => {
-	console.log('Login: ', reducer)
-}
+const mapStateToProps = reducers => ({
+	email: reducers.value.email,
+	password: reducers.value.password,
+	authed: reducers.value.authed
+})
 
 export default connect(mapStateToProps, actions)(Login)
