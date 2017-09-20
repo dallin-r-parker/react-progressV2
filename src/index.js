@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Routing from './router'
+import Routing from './routing/router'
 
 const App = () => {
 	return <Routing/>
