@@ -17,10 +17,5 @@ const PrivateRoute = ({component: Component, path, authed}) => {
 	)
 }
 
-const mapStateToProps = reducer => {
-	return {
-		authed: reducer.value.authed
-	}
-}
-
+const mapStateToProps = reducer => ({authed: reducer.value.authed})
 export default connect(mapStateToProps)(PrivateRoute)
