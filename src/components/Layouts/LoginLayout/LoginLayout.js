@@ -1,12 +1,14 @@
 import React, {Component} from 'react'
-import Login from '../Login/Login'
+import Login from '../../Login/Login'
+import "./login_layout.scss"
 
 
 class LoginLayout extends Component{
 
     render(){
         return(
-	        <div className="container login-container">
+
+	        <div className="login-container">
 		        <Login/>
 	        </div>
         )

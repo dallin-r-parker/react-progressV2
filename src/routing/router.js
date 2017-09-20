@@ -1,6 +1,6 @@
 import React from 'react'
 import {Route, Switch, HashRouter as Router} from 'react-router-dom'
-import LoginLayout from '../components/Layouts/LoginLayout'
+import LoginLayout from '../components/Layouts/LoginLayout/LoginLayout'
 import AdminLayout from '../components/Layouts/AdminLayout'
 import PrivateRoute from './PrivateRoute'
 

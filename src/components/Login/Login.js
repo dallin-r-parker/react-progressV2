@@ -26,11 +26,13 @@ class Login extends Component{
 	render(){
 		return(
 			<div className="row">
-				<form className="col s4" onSubmit={this.handleLogin}>
+				<form className="col s10" onSubmit={this.handleLogin}>
 					<h5>Progress Login</h5>
 					<input placeholder='email' onChange={this.handleEmailInput}/>
 					<input placeholder='password' onChange={this.handlePwInput}/>
-					<button onClick={this.handleLogin}>Login</button>
+					<button
+						className='btn'
+						onClick={this.handleLogin}>Login</button>
 				</form>
 			</div>
 		)
