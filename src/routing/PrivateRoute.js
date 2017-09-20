@@ -1,11 +1,11 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import {Redirect, Route} from 'react-router-dom'
 
-export default ({component: Component, path}) => {
-	const auth = false
+const PrivateRoute = ({component: Component, path, authed}) => {
 	return (
 		<Route path={path} render={props => (
-			auth ? (
+			authed ? (
 				<Component {...props}/>
 			) : (
 				<Redirect to={{
@@ -16,3 +16,11 @@ export default ({component: Component, path}) => {
 		)}/>
 	)
 }
+
+const mapStateToProps = reducer => {
+	return {
+		authed: reducer.value.authed
+	}
+}
+
+export default connect(mapStateToProps)(PrivateRoute)
