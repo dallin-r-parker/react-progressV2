@@ -11,12 +11,13 @@ class Login extends Component{
 		this.handleLogin = this.handleLogin.bind(this)
 	}
 
+
 	handleEmailInput = email => (this.props.emailInput(email.target.value))
+
 	handlePwInput = pw => (this.props.passwordInput(pw.target.value))
 	
 	handleLogin(e){
 		e.preventDefault()
-
 		this.props.loginUser(true)
 	}
 	render(){
@@ -26,9 +27,7 @@ class Login extends Component{
 					<h5>Progress Login</h5>
 					<input placeholder='email' onChange={this.handleEmailInput}/>
 					<input type='password' placeholder='password' onChange={this.handlePwInput}/>
-					<button
-						className='btn'
-						onClick={this.handleLogin}>Login</button>
+					<button className='btn' onClick={this.handleLogin}>Login</button>
 				</form>
 			</div>
 		)

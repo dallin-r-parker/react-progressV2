@@ -11,7 +11,6 @@ const INITIAL_STATE = {
 }
 
 export default (state = INITIAL_STATE, {type, payload}) => {
-
 	switch (type){
 		case USER_EMAIL:
 			return Object.assign({}, state, {email: payload})
