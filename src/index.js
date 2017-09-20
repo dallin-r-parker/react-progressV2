@@ -1,13 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import LoginLayout from './components/Layouts/LoginLayout'
+import Routing from './router'
 
 const App = () => {
-	return (
-		<section className="main-container">
-			<LoginLayout/>
-		</section>
-	)
+	return <Routing/>
 }
 
 ReactDOM.render(<App/>, document.getElementById('root'))
